@@ -19,5 +19,5 @@ window.JFY_DATA = {
   hashtag: "#UjjuGotAdicted",
   rsvp_whatsapp: "919876543210",
   music_url: "assets/music.mp3",
-  music_credit: "“Carefree” — Kevin MacLeod (incompetech.com), licensed under CC BY 4.0"
+  music_credit: ""
 };
