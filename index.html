@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1b2550">
+<title>Wedding Invitation — Just For You</title>
+<meta property="og:title" content="You're invited to our wedding">
+<meta property="og:image" content="assets/img/beach.webp">
+<link rel="preload" href="assets/img/wall.webp" as="image">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="backdrop" id="backdrop"></div>
+<main class="stage" id="stage" aria-live="polite">
+  <!-- S1 beach (seen through the arch) -->
+  <section class="sc" id="s1"><img class="bg" src="assets/img/beach.webp" alt="">
+    <div class="tx tx-couple">
+      <div class="t-hostbox" data-lines="host_line"></div>
+      <p class="t-name" data-t="groom_name"></p>
+      <p class="t-par" data-t="groom_parents"></p>
+      <p class="t-with" data-req="bride_name">with</p>
+      <p class="t-name" data-t="bride_name"></p>
+      <p class="t-par" data-t="bride_parents"></p>
+      <p class="t-at" data-req="venue">at</p>
+      <p class="t-venue" data-t="venue"></p>
+    </div>
+  </section>
+  <!-- S2 night beach -->
+  <section class="sc night" id="s2"><img class="bg" src="assets/img/night.webp" alt=""><div class="twinkle"></div>
+    <div class="tx tx-e1" data-ev="0"><p class="t-title"></p><p class="t-date"></p><p class="t-ev"></p><div class="t-det"></div></div>
+  </section>
+  <svg class="cork" id="cork" viewBox="0 0 120 200" aria-hidden="true"><defs><linearGradient id="ck" x1="0" x2="1"><stop offset="0" stop-color="#b9824a"/><stop offset=".5" stop-color="#e7bd85"/><stop offset="1" stop-color="#a06c3a"/></linearGradient><linearGradient id="fo" x1="0" x2="1"><stop offset="0" stop-color="#9c7a2e"/><stop offset=".45" stop-color="#f4dd8c"/><stop offset="1" stop-color="#8a6620"/></linearGradient></defs><path d="M28 18q32-14 64 0l-6 92H34Z" fill="url(#ck)"/><ellipse cx="60" cy="18" rx="32" ry="9" fill="#d6a670"/><path d="M30 104h60l6 70q-36 12-72 0Z" fill="url(#fo)"/><path d="M36 60h48M34 84h52M50 18v90M70 18v90" stroke="#c9c9c9" stroke-width="3" fill="none" opacity=".9"/><g fill="#fff"><circle cx="16" cy="40" r="3"/><circle cx="104" cy="30" r="2.5"/><circle cx="8" cy="90" r="2"/><circle cx="112" cy="80" r="3"/></g></svg>
+  <!-- S3 garden carnival -->
+  <section class="sc" id="s3"><img class="bg" src="assets/img/garden.webp" alt="">
+    <div class="tx tx-e2" data-ev="1"><p class="t-title"></p><p class="t-date"></p><p class="t-ev"></p><div class="t-det"></div></div>
+  </section>
+  <!-- S4 sangeet ballroom -->
+  <section class="sc night" id="s4"><img class="bg" src="assets/img/ballroom.webp" alt=""><div class="twinkle"></div>
+    <div class="tx tx-e3" data-ev="2"><p class="t-title"></p><p class="t-date"></p><p class="t-ev"></p><div class="t-det"></div></div>
+  </section>
+  <img class="fan" id="fan" src="assets/img/fan.webp" alt="">
+  <!-- S5 bazaar -->
+  <section class="sc" id="s5"><img class="bg" src="assets/img/bazaar.webp" alt="">
+    <div class="tx tx-e4" data-ev="3"><p class="t-title"></p><p class="t-date"></p><p class="t-ev"></p><div class="t-det"></div></div>
+    <div class="doors" id="doors"><img class="door l" src="assets/img/doorL.webp" alt=""><img class="door r" src="assets/img/doorR.webp" alt=""></div>
+  </section>
+  <!-- S6 wedding night -->
+  <section class="sc night" id="s6"><img class="bg" src="assets/img/mandap.webp" alt=""><div class="twinkle"></div>
+    <div class="tx tx-e5" data-ev="4"><p class="t-title"></p><p class="t-date"></p><p class="t-ev"></p><div class="t-det"></div></div>
+  </section>
+  <!-- S7 regards -->
+  <section class="sc" id="s7"><img class="bg" src="assets/img/pool.webp" alt="">
+    <div class="tx tx-reg"><p class="t-title" data-t="regards_title"></p><div class="t-fam" data-lines="family"></div><p class="t-tag" data-t="hashtag"></p></div>
+  </section>
+  <!-- S0 arch wall + gold gate -->
+  <section class="sc" id="s0">
+    <div class="zoom" id="zoom"><img class="bg" src="assets/img/wall.webp" alt=""><div class="gate" id="gate"></div></div>
+  </section>
+
+  <!-- start + end overlays -->
+  <div class="start" id="start"><button type="button" class="start__btn" id="startBtn"><span class="start__ring"></span><b>Tap to open</b><small>your invitation</small></button></div>
+  <div class="end" id="end" hidden>
+    <a class="pill" id="rsvp" target="_blank" rel="noopener">RSVP on WhatsApp</a>
+    <a class="pill" id="map" target="_blank" rel="noopener">Open venue map</a>
+    <button type="button" class="pill ghost" id="replay">↺ Watch again</button>
+    <a class="make" href="edit.html">Create your own invitation →</a>
+    <p class="credit" id="credit"></p>
+  </div>
+  <button type="button" class="mute" id="mute" aria-label="Mute music" hidden>♪</button>
+</main>
+<audio id="music" preload="auto" playsinline></audio>
+<script src="assets/sample-data.js"></script>
+<script src="assets/jfy-codec.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

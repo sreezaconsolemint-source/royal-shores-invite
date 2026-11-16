@@ -1,0 +1,98 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0e1430;overflow:hidden;-webkit-tap-highlight-color:transparent}
+body{font-family:'Lora',Georgia,serif}
+.backdrop{position:fixed;inset:-40px;background:#1b2550 center/cover;filter:blur(28px) brightness(.7);transition:background-image .6s}
+/* 1080x1920 design stage, scaled to fit by app.js */
+.stage{position:absolute;left:50%;top:50%;width:1080px;height:1920px;overflow:hidden;transform-origin:0 0;background:#000;contain:strict}
+.sc{position:absolute;inset:0;overflow:hidden;opacity:0;visibility:hidden}
+.sc .bg{position:absolute;transform-origin:0 0;left:0;top:0;width:1080px;height:1920px;display:block;will-change:transform;user-select:none;-webkit-user-drag:none}
+#s0{opacity:1;visibility:visible}
+.gate{position:absolute;left:351px;top:471px;width:384px;height:872px;overflow:visible;perspective:900px}
+.gate g{will-change:transform;transform-box:view-box}
+.gl{transform-origin:0 50%}.gr{transform-origin:384px 50%}
+.doors{position:absolute;inset:0;perspective:1600px;pointer-events:none}
+.door{position:absolute;top:0;width:540px;height:1920px;will-change:transform;backface-visibility:hidden}
+.door.l{left:0;transform-origin:0 50%}.door.r{left:540px;transform-origin:100% 50%}
+.cork{position:absolute;left:600px;top:2000px;width:120px;height:200px;opacity:0;will-change:transform;filter:drop-shadow(0 8px 14px rgba(0,0,0,.35))}
+.fan{position:absolute;left:0;top:0;width:1357px;height:1227px;opacity:0;will-change:transform;transform-origin:50% 62%;filter:drop-shadow(0 20px 30px rgba(0,0,0,.25))}
+/* twinkles on night skies */
+.twinkle{position:absolute;inset:0 0 50% 0;background-image:radial-gradient(2.5px 2.5px at 12% 18%,#fff,transparent),radial-gradient(2px 2px at 34% 9%,#fff,transparent),radial-gradient(3px 3px at 61% 22%,#fff,transparent),radial-gradient(2px 2px at 78% 12%,#fff,transparent),radial-gradient(2.5px 2.5px at 88% 31%,#fff,transparent),radial-gradient(2px 2px at 22% 38%,#fff,transparent),radial-gradient(3px 3px at 47% 44%,#fff,transparent),radial-gradient(2px 2px at 70% 40%,#fff,transparent);animation:tw 2.6s ease-in-out infinite alternate;pointer-events:none}
+.twinkle::after{content:"";position:absolute;inset:0;background-image:radial-gradient(2.5px 2.5px at 8% 30%,#fff,transparent),radial-gradient(2px 2px at 28% 25%,#fff,transparent),radial-gradient(3px 3px at 52% 8%,#fff,transparent),radial-gradient(2px 2px at 66% 30%,#fff,transparent),radial-gradient(2.5px 2.5px at 93% 18%,#fff,transparent),radial-gradient(2px 2px at 40% 30%,#fff,transparent);animation:tw 3.4s 1.3s ease-in-out infinite alternate-reverse}
+@keyframes tw{from{opacity:.15}to{opacity:1}}
+/* ---------- text blocks (positions measured from the reference at 1080x1920) ---------- */
+.tx{position:absolute;left:60px;right:60px;text-align:center;font-family:'Lora',Georgia,serif;font-weight:500}
+.tx p,.tx .ln{display:block;will-change:transform,opacity,filter}
+.t-det,.t-fam{display:block}
+.t-det .gap,.t-fam .gap{height:18px}
+/* S1 couple */
+.tx-couple{top:34px;left:56px;right:56px;color:#2f3d8e}
+.tx-couple .t-hostbox .ln{font-size:37px;line-height:50px}
+.tx-couple .t-name{font-family:'Great Vibes',cursive;font-size:114px;line-height:110px;color:#2f6a3c;margin-top:-7px}
+.tx-couple .t-par{font-size:36px;line-height:50px;margin-top:17px}
+.tx-couple .t-with{font-size:40px;line-height:50px;margin-top:5px}
+.tx-couple .t-name+.t-par{margin-top:25px}
+.tx-couple .t-with+.t-name{margin-top:-8px}
+.tx-couple .t-at{font-size:48px;line-height:60px;margin-top:25px}
+.tx-couple .t-venue{font-size:40px;line-height:50px;margin-top:9px}
+/* shared event block */
+.t-title{font-family:'Allison',cursive;font-weight:400}
+.t-date{font-size:66px;line-height:70px;letter-spacing:.01em}
+.t-date i{font-style:normal;font-size:.86em;letter-spacing:.05em}
+.t-date s{text-decoration:none;display:inline-block;margin:0 .32em;opacity:.9}
+.t-ev{font-size:54px;line-height:60px}
+.t-det .ln{font-size:48px;line-height:56px}
+/* S2 welcome dinner — white on night sky */
+.tx-e1{top:270px;color:#fff;text-shadow:0 2px 10px rgba(10,20,60,.45)}
+.tx-e1 .t-title{font-size:124px;line-height:120px}
+.tx-e1 .t-title{font-size:150px}.tx-e1 .t-date{margin-top:14px}.tx-e1 .t-ev{margin-top:40px}.tx-e1 .t-det{margin-top:44px}
+/* S3 carnival — purple on blush */
+.tx-e2{top:33px;color:#55357a}
+.tx-e2 .t-title{font-size:134px;line-height:120px;color:#a8389a}
+.tx-e2 .t-date{margin-top:69px}.tx-e2 .t-ev{font-weight:600;font-size:54px;color:#4b2370;margin-top:16px}
+.tx-e2 .t-det{margin-top:27px}.tx-e2 .t-det .ln{color:#4b2370;font-size:44px;line-height:54px}
+/* S4 sangeet — big white script */
+.tx-e3{top:286px;color:#fff;text-shadow:0 2px 12px rgba(10,10,50,.55)}
+.tx-e3 .t-title{font-size:212px;line-height:170px}
+.tx-e3 .t-date{margin-top:70px}.tx-e3 .t-ev{margin-top:20px}.tx-e3 .t-det{margin-top:26px}
+/* S5 mayra — crimson */
+.tx-e4{top:97px;color:#b3213f;transform-origin:50% 380px}
+.tx-e4 .t-title{font-size:122px;line-height:110px}
+.tx-e4 .t-date{margin-top:36px}
+.tx-e4 .t-ev{font-family:'Lobster Two',cursive;font-weight:700;font-style:italic;font-size:80px;line-height:84px;margin-top:18px}
+.tx-e4 .t-det{margin-top:23px}.tx-e4 .t-det .ln{font-size:52px;line-height:60px}
+/* S6 wedding — white */
+.tx-e5{top:72px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.tx-e5 .t-title{font-size:112px;line-height:110px}
+.tx-e5 .t-date{margin-top:36px}
+.tx-e5 .t-ev{font-family:'Lobster Two',cursive;font-weight:700;font-style:italic;font-size:92px;line-height:92px;margin-top:8px}
+.tx-e5 .t-det{margin-top:25px}.tx-e5 .t-det .ln{font-size:38px;line-height:48px}
+/* S7 regards */
+.tx-reg{top:67px;color:#2f7a3c}
+.tx-reg .t-title{font-size:134px;line-height:120px;color:#3558a6}
+.tx-reg .t-fam{margin-top:72px}.tx-reg .t-fam .ln{font-size:50px;line-height:63px}
+.tx-reg .t-tag{font-size:50px;line-height:63px;margin-top:64px}
+.hide{display:none!important}
+/* overlays */
+.start{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 55%,rgba(255,250,235,0) 30%,rgba(60,40,10,.25));z-index:20;transition:opacity .5s}
+.start.out{opacity:0;pointer-events:none}
+.start__btn{position:relative;margin-top:1080px;width:360px;height:360px;border-radius:50%;border:0;background:radial-gradient(circle,#fff8e3,#f3dfa6);color:#6b4b14;font-family:'Lora',serif;box-shadow:0 20px 60px rgba(80,50,0,.35),inset 0 0 0 6px #d7b25c;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.start__btn b{font-family:'Great Vibes',cursive;font-weight:400;font-size:84px;line-height:1}
+.start__btn small{font-size:30px;letter-spacing:.18em;text-transform:uppercase}
+.start__ring{position:absolute;inset:-24px;border-radius:50%;border:4px solid rgba(215,178,92,.8);animation:ring 1.8s ease-out infinite}
+@keyframes ring{from{transform:scale(.9);opacity:1}to{transform:scale(1.25);opacity:0}}
+.end{position:absolute;left:0;right:0;bottom:120px;z-index:15;display:flex;flex-direction:column;align-items:center;gap:26px;animation:fadeUp .8s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.pill{display:block;min-width:620px;padding:30px 50px;border-radius:80px;background:rgba(255,255,255,.92);color:#2f3d8e;font:600 38px 'Lora',serif;text-decoration:none;text-align:center;border:0;box-shadow:0 10px 30px rgba(0,40,80,.25);cursor:pointer}
+.pill.ghost{background:rgba(47,61,142,.85);color:#fff}
+.make{color:#fff;font:500 32px 'Lora',serif;text-shadow:0 2px 8px rgba(0,0,0,.6);margin-top:6px}
+.credit{color:#fff;font:400 22px 'Lora',serif;opacity:.85;text-shadow:0 1px 4px rgba(0,0,0,.7);max-width:900px;text-align:center}
+.mute{position:absolute;right:36px;top:36px;z-index:16;width:92px;height:92px;border-radius:50%;border:0;background:rgba(255,255,255,.75);color:#2f3d8e;font-size:46px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.mute.off{text-decoration:line-through;opacity:.7}
+.pv .start{display:none}
+.zoom{position:absolute;inset:0;transform-origin:542px 907px;will-change:transform}
+.gate{perspective:1100px}
+.gate svg{position:absolute;top:0;width:192px;height:872px;overflow:visible;will-change:transform}
+.gate .gl{left:0;transform-origin:0 50%}.gate .gr{left:192px;transform-origin:100% 50%}
+.end[hidden]{display:none}
+.make{background:rgba(20,30,70,.55);padding:12px 28px;border-radius:40px;text-decoration:none}
+.credit{background:rgba(20,30,70,.5);padding:8px 20px;border-radius:20px}
